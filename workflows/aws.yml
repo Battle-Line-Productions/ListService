@@ -25,7 +25,7 @@ jobs:
     - name: App Settings Variable Substitution
       uses: microsoft/variable-substitution@v1
       with:
-        files: 'BattleNotifications.Api/appsettings.Production.json'
+        files: 'ListService.Api/appsettings.Production.json'
       env:
         ApiKey: ${{ secrets.BATTLE_AUTH_TEST_API_KEY }}
         JwtSettings.Secret: ${{ secrets.BATTLE_AUTH_TEST_JWT_SECRET }}
@@ -38,7 +38,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: battlenotifications
+        ECR_REPOSITORY: listservice
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
