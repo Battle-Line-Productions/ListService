@@ -15,7 +15,7 @@
         {
             services.AddSwaggerGen(x =>
             {
-                x.SwaggerDoc("v1", new OpenApiInfo { Title = "BattleNotifications Api", Version = "v1" });
+                x.SwaggerDoc("v1", new OpenApiInfo { Title = "ListService Api", Version = "v1" });
 
                 x.ExampleFilters();
 

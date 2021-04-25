@@ -8,9 +8,13 @@
 
         public const string Base = Root + "/" + Version;
 
-        public static class Notification
+        public static class AppList 
         {
-            public const string SendEmail = Base + "/email";
+            public const string List = Base + "/list";
+            public const string Get = Base + "/list/{listId}";
+            public const string Create = Base + "/list";
+            public const string Update = Base + "/list/{listId}";
+            public const string Delete = Base + "/list/{listId}";
         }
     }
 }
