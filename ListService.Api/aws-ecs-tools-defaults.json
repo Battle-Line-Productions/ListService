@@ -1,0 +1,9 @@
+
+{
+    "region" : "us-east-2",
+    "profile" : "blptest",
+    "configuration" : "Release",
+    "image-tag"     : "listserviceapi:latest",
+    "docker-build-working-dir" : "",
+    "vstoolkit-deployment-mode" : "PushOnly"
+}

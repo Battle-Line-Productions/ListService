@@ -1,0 +1,45 @@
+service: ListService
+
+provider:
+  name: aws
+  runtime: dotnetcore5.0
+  region: us-east-2
+  profile: ${opt:profile, 'blptest'}
+  logRetentionInDays: 3
+  stage: ${opt:stage, 'prod'}
+  lambdaHashingVersion: 20201221
+  apiGateway:
+    shouldStartNameWithService: true
+  iam:
+    role:
+      statements:
+        - Effect: 'Allow'
+          Action:
+            - 'logs: *'
+          Resource: '*'
+
+custom:
+  customDomain:
+    domainName: lists.api.battlelineproductions.com
+    certificateName: '*.api.battlelineproductions.com'
+    createRoute53Record: true
+    endpointType: regional
+    securityPolicy: tls_1_2
+    apiType: rest
+
+plugins:
+  - serverless-domain-manager
+
+package:
+  individually: true
+
+functions:
+  api:
+    name: ${self:service}-api-lambda
+    memorySize: 512
+    description: API lambda container for List Service
+    image: 098170852411.dkr.ecr.us-east-2.amazonaws.com/listserviceapi:latest
+    events:
+    - http:
+        path: /{any+}
+        method: ANY
