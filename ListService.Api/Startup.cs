@@ -142,7 +142,7 @@ namespace ListService.Api
                 app.UseExceptionHandler("/error");
             }
 
-            app.UseMiddleware<CorrelationTokenMiddleware>();
+            app.UseMiddleware<CorrelationTokenMiddleware>(_container);
             app.UseMiddleware<ExceptionMiddleware>(_container);
 
             app.UseHttpsRedirection();
