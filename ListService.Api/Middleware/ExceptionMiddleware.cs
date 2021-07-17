@@ -1,16 +1,18 @@
 ﻿namespace ListService.Api.Middleware
 {
     using System;
+    using System.Net;
     using System.Threading.Tasks;
+    using ApiModels;
     using Microsoft.AspNetCore.Http;
     using RockLib.Logging;
 
-    public class GlobalErrorLoggingMiddleware
+    public class ExceptionMiddleware
     {
         private readonly RequestDelegate _next;
         private readonly ILogger _logger;
 
-        public GlobalErrorLoggingMiddleware(RequestDelegate next, ILogger logger)
+        public ExceptionMiddleware(RequestDelegate next, ILogger logger)
         {
             _next = next;
             _logger = logger;
@@ -34,8 +36,19 @@
 
                 _logger.Log(logEntry);
 
-                throw;
+                var errorDetails = new ErrorDetails
+                    {Message = ex.Message, StatusCode = (int) HttpStatusCode.InternalServerError};
+
+                await HandleExceptionAsync(context, errorDetails);
             }
+        }
+
+        private static Task HandleExceptionAsync(HttpContext context, ErrorDetails details)
+        {
+            context.Response.ContentType = "application/json";
+            context.Response.StatusCode = details.StatusCode;
+
+            return context.Response.WriteAsync(details.ToString());
         }
     }
 }
