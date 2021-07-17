@@ -43,7 +43,8 @@
                     ? GetPageUri(request, request.PageNumber + 1, request.PageSize, route)
                     : null,
                 PreviousPage = request.PageNumber - 1 >= 1 && request.PageNumber <= roundedTotalPages
-                    ? GetPageUri(request, request.PageNumber - 1, request.PageSize, route),
+                    ? GetPageUri(request, request.PageNumber - 1, request.PageSize, route)
+                    : null,
                 FirstPage = GetPageUri(request, 1, request.PageSize, route),
                 LastPage = GetPageUri(request, roundedTotalPages, request.PageSize, route),
                 TotalPages = roundedTotalPages,

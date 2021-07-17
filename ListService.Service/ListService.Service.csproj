@@ -18,4 +18,8 @@
     <ProjectReference Include="..\ListService.Contracts\ListService.Contracts.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Crypto\" />
+  </ItemGroup>
+
 </Project>
