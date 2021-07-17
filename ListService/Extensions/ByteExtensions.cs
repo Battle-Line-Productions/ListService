@@ -1,4 +1,4 @@
-﻿namespace ListService.Service.Extensions
+﻿namespace ListService.Extensions
 {
     using System;
 

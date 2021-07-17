@@ -1,8 +1,10 @@
-﻿namespace ListService.Api.Helpers
+﻿using ListService
+
+namespace ListService.Api.Helpers
 {
     using System.Collections.Generic;
     using ApiModels;
-    using Service.Models;
+    using Models;
 
     public interface IPagedResponseBuilder
     {

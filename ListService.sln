@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListService.Api", "ListService.Api\ListService.Api.csproj", "{3D948601-D05D-4E46-A1D2-36E037AB3518}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListService.Service", "ListService.Service\ListService.Service.csproj", "{03757FCE-807F-42C3-8D39-A31A9E5D932F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListService", "ListService\ListService.csproj", "{03757FCE-807F-42C3-8D39-A31A9E5D932F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{495B6656-A4A1-4ABE-B9C8-899920058FDC}"
 EndProject

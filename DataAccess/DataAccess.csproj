@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ListService.Service\ListService.Service.csproj" />
+    <ProjectReference Include="..\ListService\ListService.csproj" />
   </ItemGroup>
 
 </Project>

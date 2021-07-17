@@ -11,21 +11,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\**" />
-    <Compile Remove="SwaggerExamples\**" />
-    <Compile Remove="Validators\**" />
-    <Content Remove="Controllers\**" />
-    <Content Remove="SwaggerExamples\**" />
-    <Content Remove="Validators\**" />
-    <EmbeddedResource Remove="Controllers\**" />
-    <EmbeddedResource Remove="SwaggerExamples\**" />
-    <EmbeddedResource Remove="Validators\**" />
-    <None Remove="Controllers\**" />
-    <None Remove="SwaggerExamples\**" />
-    <None Remove="Validators\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Amazon.Lambda.AspNetCoreServer" Version="6.0.3" />
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="EFCore.NamingConventions" Version="5.0.2" />
@@ -55,8 +40,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
-    <ProjectReference Include="..\ListService.Contracts\ListService.Contracts.csproj" />
-    <ProjectReference Include="..\ListService.Service\ListService.Service.csproj" />
+    <ProjectReference Include="..\ListService\ListService.csproj" />
   </ItemGroup>
 
 </Project>

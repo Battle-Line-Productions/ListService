@@ -1,4 +1,4 @@
-﻿namespace ListService.Service.Interfaces
+﻿namespace ListService.Interfaces
 {
     public interface ICryptography
     {

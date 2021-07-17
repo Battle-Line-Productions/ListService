@@ -1,4 +1,4 @@
-﻿namespace ListService.Service.Models
+﻿namespace ListService.Models
 {
     public enum ResultStatus
     {

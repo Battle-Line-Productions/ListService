@@ -1,4 +1,4 @@
-﻿namespace ListService.Service.Crypto
+﻿namespace ListService.Crypto
 {
     using System;
     using System.IO;
