@@ -5,7 +5,7 @@ namespace ListService.Api
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Logging;
 
-    public class Program
+    public static class Program
     {
         public static async Task Main(string[] args)
         {
@@ -14,7 +14,7 @@ namespace ListService.Api
             await host.RunAsync();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        private static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .ConfigureLogging(logging =>
                 {

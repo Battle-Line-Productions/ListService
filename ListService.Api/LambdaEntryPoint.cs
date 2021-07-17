@@ -3,7 +3,7 @@
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Hosting;
 
-    public class LambdaEntryPoint : Amazon.Lambda.AspNetCoreServer.APIGatewayProxyFunction
+    public class LambdaEntryPoint : Amazon.Lambda.AspNetCoreServer.APIGatewayHttpApiV2ProxyFunction
     {
         protected override void Init(IWebHostBuilder builder)
         {
