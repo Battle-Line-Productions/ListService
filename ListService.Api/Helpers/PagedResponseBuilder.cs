@@ -3,13 +3,11 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Runtime.CompilerServices;
     using System.Web;
     using ApiModels;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.WebUtilities;
-    using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
-    using Service.Models;
+    using Models;
 
     public class PagedResponseBuilder : IPagedResponseBuilder
     {

@@ -1,6 +1,4 @@
-﻿using ListService
-
-namespace ListService.Api.Helpers
+﻿namespace ListService.Api.Helpers
 {
     using System.Collections.Generic;
     using ApiModels;
