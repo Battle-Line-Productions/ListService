@@ -125,8 +125,6 @@ namespace ListService.Api
             app.UseSimpleInjector(_container);
             app.UseSwagger();
             app.UseCors("CorsPolicy");
-            app.UseMiddleware<CorrelationTokenMiddleware>();
-            app.UseMiddleware<ExceptionMiddleware>();
 
             if (env.IsDevelopment())
             {
@@ -141,9 +139,11 @@ namespace ListService.Api
                     x.SupportedSubmitMethods();
                 });
 
-                app.UseHsts();
                 app.UseExceptionHandler("/error");
             }
+
+            app.UseMiddleware<CorrelationTokenMiddleware>();
+            app.UseMiddleware<ExceptionMiddleware>(_container);
 
             app.UseHttpsRedirection();
             app.UseRouting();
@@ -173,6 +173,8 @@ namespace ListService.Api
                     await context.Response.WriteAsJsonAsync(response);
                 }
             });
+
+            _container.Verify();
         }
 
         private void InitializeContainer()

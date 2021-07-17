@@ -7,19 +7,16 @@
     using Microsoft.Extensions.Primitives;
 
     [ExcludeFromCodeCoverage]
-    public class CorrelationTokenMiddleware
+    public class CorrelationTokenMiddleware : IMiddleware
     {
-        private readonly RequestDelegate _next;
         private readonly CorrelationIdOptions _options;
 
         public CorrelationTokenMiddleware(RequestDelegate next, CorrelationIdOptions options)
         {
-            _next = next ?? throw new ArgumentNullException(nameof(next));
-
             _options = options ?? throw new ArgumentNullException(nameof(options));
         }
 
-        public async Task InvokeAsync(HttpContext context)
+        public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
             if (context.Request.Headers.TryGetValue(_options.Header, out StringValues correlationId))
             {
@@ -35,7 +32,7 @@
                 });
             }
 
-            await _next(context);
+            await next(context);
         }
 
         public class CorrelationIdOptions
